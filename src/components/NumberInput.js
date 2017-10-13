@@ -12,14 +12,10 @@ constructor(props) {
 }
 
 update_num_input = (e) => {
-  this.setState({
-    your_number : e.target.value
-  })
+  this.fetchNumberFact(e.target.value)
 }
 
-fetchNumberFact = (e) => {
-  e.preventDefault();
-  let input_num = this.state.your_number;
+fetchNumberFact = (input_num) => {
   if (input_num) {
     fetch('http://numbersapi.com/'+input_num)
     .then(r => r.text())
@@ -40,6 +36,10 @@ fetchNumberFact = (e) => {
   }
 }
 
+submitFalse = (e) => {
+  e.preventDefault();
+}  
+
 render() {
   return (
     <div>
@@ -47,11 +47,10 @@ render() {
       <div className="col-xs-12 col-md-6">
         <div className="formHolder">
           <h1>Enter a Number to Get an Interesting Fact</h1>
-          <form onSubmit={this.fetchNumberFact}>
+          <form onSubmit={this.submitFalse}>
             <div className="form-group">
               <input type="number" name="your_number" className="form-control num-input" onChange={this.update_num_input} />
             </div>
-            <input type="submit" value="Submit" className="btn btn-success" />
           </form>						
         </div>
         <div className={'factHolder '+this.state.number_fact_show_hide}>
