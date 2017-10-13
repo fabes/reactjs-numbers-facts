@@ -1,0 +1,29 @@
+
+body,html{
+  background-color: #58606d;
+}
+
+.formHolder{
+  background-color: #366cce;
+  color: #ffffff;
+  margin-top: 20%;
+  padding: 1rem;
+}
+
+.formHolder h1{
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+
+.formHolder .num-input{
+  margin-top: 1rem;
+}
+
+.factHolder{
+  background-color: #0f2c61;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+}
